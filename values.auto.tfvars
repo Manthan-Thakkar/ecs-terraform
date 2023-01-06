@@ -1,8 +1,8 @@
 #providers.tf
-aws_region = "ap-south-1"
+aws_region = "us-east-1"
 
 #cluster.tf
-cluster_name = "nginx-cluster"
+cluster_name = "bhub-ui-adminportal-cluster"
 
 #task-def.tf
 launch_type = ["FARGATE"]
@@ -12,7 +12,7 @@ operating_system = "LINUX"
 #vpc.tf
 vpc_name = "ecs-vpc"
 vpc_cidr = "10.0.0.0/16"
-availability_zone = ["ap-south-1a","ap-south-1b","ap-south-1c"]
+availability_zone = ["us-east-1a","us-east-1b","us-east-1c"]
 private_subnets = ["10.0.1.0/24", "10.0.2.0/24"]
 public_subnets = ["10.0.3.0/24","10.0.4.0/24"]
 
@@ -40,9 +40,9 @@ ecs_sg_egress_rules = ["all-all"]
 
 #task-service.tf
 container_definition_file = "container_definations.json"
-task_cpu = 256
-task_memory = 512
-ecs_service_name = "ecs-nginx-service"
+task_cpu = 1024
+task_memory = 2048
+ecs_service_name = "bhub-ui-adminportal-service"
 ecs_launch_type = "FARGATE"
 ecs_desired_count = 2
 container_name = "nginx"

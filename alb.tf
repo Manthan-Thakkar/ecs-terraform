@@ -11,8 +11,8 @@ module "alb" {
   name = var.abl_name
   load_balancer_type = var.alb_type
 
-  vpc_id = module.vpc.vpc_id
-  subnets = module.vpc.public_subnets
+  vpc_id = "vpc-0af8122691e816d0d"
+  subnets = ["subnet-07c652b0a3c75eb30","subnet-0a88b7f0721f405df","subnet-07c652b0a3c75eb30"]
   security_groups = [module.alb-sg.security_group_id]
   
   target_groups = [

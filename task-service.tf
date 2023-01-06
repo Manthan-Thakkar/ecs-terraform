@@ -12,7 +12,7 @@ resource "aws_ecs_service" "ecs-nginx-service" {
   }
   
   network_configuration {
-    subnets = [for subnets in module.vpc.private_subnets : subnets ]
+    subnets = ["subnet-0c2b858181b9a6ce4","subnet-00ed2cc78904dfe34","subnet-0effa5fc4e43d6bfa"]
     # subnets = [module.vpc.private_subnets[0],module.vpc.private_subnets[1]]
     security_groups = [module.ecs-sg.security_group_id]
   }

@@ -3,7 +3,7 @@ module "alb-sg" {
 
   name        = var.alb_sg_name
   description = var.alb_sg_desc
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = "vpc-0af8122691e816d0d"
 
   ingress_cidr_blocks = var.alb_sg_cidr
   ingress_rules       = var.alb_sg_ingress_rules
@@ -15,7 +15,7 @@ module "ecs-sg" {
 
   name = var.ecs_sg_name
   description = var.ecs_sg_desc
-  vpc_id = module.vpc.vpc_id
+  vpc_id = "vpc-0af8122691e816d0d"
   ingress_with_source_security_group_id = [
     {
       rule = var.ecs_sg_ingress_rules
